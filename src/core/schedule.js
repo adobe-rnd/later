@@ -354,8 +354,8 @@ later.schedule = function(sched) {
   */
   function compareFn(dir) {
     return dir === 'next' ?
-      function(a,b) { return !b || (a.getTime() > b.getTime()); } :
-      function(a,b) { return !a || (b.getTime() > a.getTime()); };
+      function(a,b) { return !a || !b || (a.getTime() > b.getTime()); } :
+      function(a,b) { return !a || !b || (b.getTime() > a.getTime()); };
   }
 
   /**
